@@ -19,4 +19,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BidimensionalPartyBits.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRC.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

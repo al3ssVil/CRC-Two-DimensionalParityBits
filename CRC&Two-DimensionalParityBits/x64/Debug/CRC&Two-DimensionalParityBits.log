@@ -1,6 +1,8 @@
 ﻿  CRC&Two-DimensionalParityBits.cpp
-C:\Users\vilcu\Desktop\CRC&Two-DimensionalParityBits\CRC&Two-DimensionalParityBits\CRC&Two-DimensionalParityBits.cpp(18,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\vilcu\Desktop\CRC&Two-DimensionalParityBits\CRC&Two-DimensionalParityBits\CRC&Two-DimensionalParityBits.cpp(110,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  CRC&Two-DimensionalParityBits.vcxproj -> C:\Users\vilcu\Desktop\CRC&Two-DimensionalParityBits\x64\Debug\CRC&Two-DimensionalParityBits.exe
+C:\Users\vilcu\Desktop\projects\CRC-Two-DimensionalParityBits\CRC&Two-DimensionalParityBits\BidimensionalPartyBits.h(33,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'CRC&Two-DimensionalParityBits.cpp')
+  
+C:\Users\vilcu\Desktop\projects\CRC-Two-DimensionalParityBits\CRC&Two-DimensionalParityBits\CRC&Two-DimensionalParityBits.cpp(23,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  CRC&Two-DimensionalParityBits.vcxproj -> C:\Users\vilcu\Desktop\projects\CRC-Two-DimensionalParityBits\x64\Debug\CRC&Two-DimensionalParityBits.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

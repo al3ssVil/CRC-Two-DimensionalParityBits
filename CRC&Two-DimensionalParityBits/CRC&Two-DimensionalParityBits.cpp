@@ -1,137 +1,64 @@
-﻿#include <iostream>
-#include <vector>
-#include <random>
-
-bool Valid(const std::string& message)
-{
-	if (message.length() % 7 != 0)
-		return false;
-	for (int i = 0; i < message.length(); i++)
-		if (message[i] != '1' && message[i] != '0')
-			return false;
-	return true;
-}
-
-void PopulateMatrix(const std::string& message, std::vector<std::vector<char>>& matrix)
-{
-	int position = 0, count = 0;
-	int rows = message.length() / 7;
-	matrix.resize(rows + 1, std::vector<char>(8, '0'));
-	for (int i = 0; i < rows; i++)
-	{
-		count = 0;
-		for (int j = 0; j <= 6; j++)
-		{
-			matrix[i][j] = message[position];
-			if (matrix[i][j] == '1')
-				count++;
-			position++;
-		}
-		if (count % 2 == 0)
-			matrix[i][7] = '0';
-		else
-			matrix[i][7] = '1';
-	}
-	for (int j = 0; j <= 7; j++)
-	{
-		count = 0;
-		for (int i = 0; i < rows; i++)
-		{
-			if ( matrix[i][j] == '1')
-				count++;
-		}
-		if (count % 2 == 0)
-			matrix[rows][j] = '0';
-		else
-			matrix[rows][j] = '1';
-	}
-}
-
-void DisplayMatrix(const std::vector<std::vector<char>>& matrix)
-{
-	for (int i = 0; i < matrix.size()-1; i++)
-	{
-		for (int j = 0; j < matrix[0].size()-1; j++)
-			std::cout << matrix[i][j] << ' ';
-		std::cout << " | " << matrix[i][matrix[0].size()-1];
-		std::cout << '\n';
-	}
-	std::cout << "------------------\n";
-	for (int j = 0; j < matrix[0].size()-1; j++)
-		std::cout << matrix[matrix.size()-1][j] << ' ';
-	std::cout << " | " << matrix[matrix.size() - 1][matrix[0].size() - 1];
-}
-
-void CoruptionOfMatrix(int randomNumber, std::vector<std::vector<char>>& matrix)
-{
-	if (matrix[randomNumber / 7][randomNumber % 7] == '1')
-		matrix[randomNumber / 7][randomNumber % 7] = '0';
-	else
-		matrix[randomNumber / 7][randomNumber % 7] = '1';
-
-	int count = 0;
-	int row=-1, column=-1;
-	for (int i = 0; i < matrix.size()-1; i++)
-	{
-		count = 0;
-		for (int j = 0; j <= 6; j++)
-		{
-			if (matrix[i][j] == '1')
-				count++;
-		}
-		if (matrix[i][7] != (char)((count % 2)+'0'))
-		{
-			row = i;
-			matrix[i][7] = (char)((count % 2) + '0');
-		}
-	}
-	for (int j = 0; j <= 7; j++)
-	{
-		count = 0;
-		for (int i = 0; i < matrix.size()-1; i++)
-		{
-			if (matrix[i][j] == '1')
-				count++;
-		}
-		if (matrix[matrix.size() - 1][j] != (char)((count % 2) + '0'))
-		{
-			if(j!=7)
-				column = j;
-			matrix[matrix.size() - 1][j] = (char)((count % 2) + '0');
-		}
-	}
-	std::cout << "\nThe row corupted is " << (row+1) << " and the column is " << (column+1) << '\n'; 
-}
+﻿#include <random>
+#include "BidimensionalPartyBits.h"
+#include "CRC.h"
 
 int main()
 {
-	std::string message;
-	std::vector<std::vector<char>> matrix;
-	srand(time(NULL));
-
-	std::cout << "Please input the binary message: ";
-	std::cin >> message;
-
-	if (Valid(message) == false)
+	std::cout << "MENU\n";
+	std::cout << "\n1. BIDIMENSIONAL PARTY BITS\n";
+	std::cout << "\n2. CYCLIC REDUNDANCY CHECK (CRC)\n";
+	std::cout << "\n3. EXIT\n";
+	std::cout << "\nWhat is your choice? \n\n";
+	int decision = 0, final = 0;
+	std::cin >> decision;
+	while (final == 0)
 	{
-		while (Valid(message) == false)
+		switch (decision)
 		{
-			std::cout << "\nInvalid message! Please input the binary message: ";
-			std::cin >> message;
+		case 1:
+		{
+			std::cout << "\nYou selected: BIDIMENSIONAL PARTY BITS\n\n";
+			std::string message;
+			std::vector<std::vector<char>> matrix;
+			srand(time(NULL));
+			Validation(message);
+
+			PopulateMatrix(message, matrix);
+			std::cout << "\nThe matrix for the message is:\n";
+			DisplayMatrix(matrix);
+
+			int randomNumber = rand() % message.length();
+			std::cout << "\n\nThe random position is: " << randomNumber + 1 << '\n';
+			message[randomNumber] ^= 1;//xor
+			std::cout << "\nThe message after coruption is: " << message << '\n';
+			CoruptionOfMatrix(randomNumber, matrix);
+			std::cout << "\nThe Matrix after the coruption:\n";
+			DisplayMatrix(matrix);
+			break;
+		}
+		case 2:
+		{
+			std::cout << "\nYou selected: CYCLIC REDUNDANCY CHECK (CRC)\n\n";
+			std::string message, polynomial;
+			Validation(message, polynomial);
+			CRC(message, polynomial);
+			break;
+		}
+		case 3:
+		{
+			final = 1;
+			break;
+		}
+		default:
+		{
+			std::cout << "Not a valid choice! Enter again.\n\n";
+		}
+		}
+		if (final != 1)
+		{
+			std::cout << "\nDo you want another choice?\n\n";
+			std::cin >> decision;
 		}
 	}
-
-	PopulateMatrix(message, matrix);
-	std::cout << "\nThe matrix for the message is:\n";
-	DisplayMatrix(matrix);
-
-	int randomNumber = rand() % message.length();
-	std::cout << "\n\nThe random position is: " << randomNumber+1 << '\n';
-	message[randomNumber] ^= 1;//xor
-	std::cout << "\nThe message after coruption is: " << message << '\n';
-	CoruptionOfMatrix(randomNumber, matrix);
-	std::cout << "\nThe Matrix after the coruption:\n";
-	DisplayMatrix(matrix);
-
 	return 0;
 }

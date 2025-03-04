@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vilcu\\Desktop\\projects\\CRC-Two-DimensionalParityBits\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EADF1B29-8533-48CF-833A-5C24CC915E07}|CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.vcxproj|C:\\Users\\vilcu\\Desktop\\projects\\CRC-Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EADF1B29-8533-48CF-833A-5C24CC915E07}|CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.vcxproj|solutionrelative:CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CRC\u0026Two-DimensionalParityBits.cpp",
+              "DocumentMoniker": "C:\\Users\\vilcu\\Desktop\\projects\\CRC-Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp",
+              "RelativeDocumentMoniker": "CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp",
+              "ToolTip": "C:\\Users\\vilcu\\Desktop\\projects\\CRC-Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp",
+              "RelativeToolTip": "CRC\u0026Two-DimensionalParityBits\\CRC\u0026Two-DimensionalParityBits.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-04T22:01:12.317Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
