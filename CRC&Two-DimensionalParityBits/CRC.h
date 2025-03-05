@@ -40,7 +40,7 @@ void Validation(std::string& message, std::string& polynomial)
 
 void CRC(std::string message, std::string polynomial)
 {
-	for (auto c : polynomial)
+	for (int i = 0; i < polynomial.size() - 1; i++)
 		message = message + '0';
 	std::cout << "\nMessage after concatenation: \n" << message << '\n';
 	int totalPos = 0;
