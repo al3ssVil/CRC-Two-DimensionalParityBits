@@ -85,11 +85,13 @@ And if we choose the second option.
 
 First with input ``110100101010110`` for the message and ``1011`` for the polynomial.
 
-![image](https://github.com/user-attachments/assets/452fd5a8-3c76-4522-806c-3a87267d7316)
+![image](https://github.com/user-attachments/assets/2fe1e871-2487-4c4c-8633-34505dec1f64)
+
 
 And after with the `1101001010101101` for the message and `1011` for the polynomial, to see what happen when we have 0 for the rest.
 
-![image](https://github.com/user-attachments/assets/e1d8f59b-1998-49e3-a925-25d6ce28b53c)
+![image](https://github.com/user-attachments/assets/4ed31922-cbeb-4f97-8c76-03def354d237)
+
 
 
 
