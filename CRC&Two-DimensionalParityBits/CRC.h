@@ -2,6 +2,12 @@
 #include <iostream>
 #include <vector>
 
+std::string RemoveLeadingZeros(const std::string& str)
+{
+	size_t firstOne = str.find_first_not_of('0');
+	return (firstOne == std::string::npos) ? "0" : str.substr(firstOne);
+}
+
 bool IsValid(std::string message)
 {
 	for (int i = 0; i < message.length(); i++)
@@ -33,6 +39,9 @@ void Validation(std::string& message, std::string& polynomial)
 				std::cin >> polynomial;
 			}
 		}
+		message = RemoveLeadingZeros(message);
+		polynomial = RemoveLeadingZeros(polynomial);
+
 		if (message.length() < polynomial.length())
 			std::cout << "\nThe message must be bigger then the polynomial generator!\n";
 	} while (message.length() < polynomial.length());
